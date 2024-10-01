@@ -205,8 +205,14 @@ for (let value of iterable) {
 }
 ```
 ## Task 11
+Set Variables as Property Names
+```ES6
+const key1 = "language"
+const obj = {
+  [key1]: "javascript",
+}
 
-
+```
 ## Task 12
 
 
