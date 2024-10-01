@@ -7,8 +7,9 @@ function getCurrentYear() {
     const currentYear = getCurrentYear();
   
     return {
-    [`income-${currentYear}`] : income,
-    [`gdp-${currentYear}`] : gdp,
-    [`capita-${currentYear}`] : capita,
+      [`income-${currentYear}`]: income,
+      [`gdp-${currentYear}`]: gdp,
+      [`capita-${currentYear}`]: capita,
     };
   }
+  
