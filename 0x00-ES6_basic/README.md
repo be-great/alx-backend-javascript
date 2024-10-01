@@ -191,8 +191,19 @@ Use ES6 method properties:-
 ```
 
 ## Task 10
-
-
+ES6’s for...of operator
+Syntax
+```javascript
+for (variable of iterable)
+  statement
+```
+Example
+```javascript
+const list = [10, 20, 30];
+for (let value of iterable) {
+  console.log(value);
+}
+```
 ## Task 11
 
 
