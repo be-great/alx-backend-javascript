@@ -214,8 +214,32 @@ const obj = {
 
 ```
 ## Task 12
+- Spread syntax.
+The spread (...) syntax allows an iterable, such as an array or string, to be expanded in places where zero or more arguments.
 
+```javascript
+const array = [1, 2, 3];
+const obj = { ...array };
+// {0:1, 1:2, 2: 3}
+const str = "test"
+const obj = { ...str };
+// { '0': 't', '1': 'e', '2': 's', '3': 't' }
+```
 
+- ES6 method property syntax.
+
+```javascript
+const obj = {
+  a: "foo",
+  b() {
+    return this.a;
+  },
+  ["foo" + 2 ]() {
+    return 2;
+  },
+};
+console.log(obj.b()); // "foo"
+```
 ## Task 100
 
 
