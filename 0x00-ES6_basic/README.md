@@ -120,3 +120,94 @@ Example:-
 ```bash
 npm run dev 0-main.js 
 ```
+
+## Task 0
+
+
+## Task 1
+
+
+## Task 2
+
+
+## Task 3
+
+
+## Task 4
+
+
+## Task 5
+
+
+## Task 6
+
+
+## Task 7
+Shorthand Properties
+```javascript
+// From
+function formatMessage (name, id, avatar) {
+  return {
+    name: name,
+    id: id,
+    avatar: avatar,
+    timestamp: Date.now()
+  }
+}
+// To
+function formatMessage (name, id, avatar) {
+  return {
+    name,
+    id,
+    avatar,
+    timestamp: Date.now()
+  }
+}
+
+```
+## Task 8
+How to Set Variables as Property Names
+```javascript
+
+const key1 = "language"
+const key2 = "isStudent"
+
+const obj = {
+  name: "dillion",
+  age: 1000,
+  [key1]: "javascript",
+  [key2]: true
+}
+
+console.log(obj)
+
+```
+
+## Task 9
+Use ES6 method properties:-
+```javascript
+
+
+```
+
+## Task 10
+
+
+## Task 11
+
+
+## Task 12
+
+
+## Task 100
+
+
+## Task 101
+
+
+
+
+
+
+
+
