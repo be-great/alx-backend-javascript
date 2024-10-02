@@ -113,6 +113,7 @@ async function name() {
 # Tasks 0
 - just return a promise wihtout anything
 # Tasks 1
+- a promise with success function and rejection.
 # Tasks 2
 # Tasks 3
 # Tasks 4
