@@ -8,6 +8,6 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
       res.map((output) => ({
         status: output.status,
         value: output.status === 'fulfilled' ? output.value : String(output.reason),
-      }));
+      }))
     });
 }
