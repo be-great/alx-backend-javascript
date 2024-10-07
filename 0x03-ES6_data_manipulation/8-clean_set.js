@@ -1,6 +1,6 @@
 export default function cleanSet(set, startString) {
   // check if the startstring is string and not empty
-  if (!startString || typeof startString !== 'string') {
+  if (!startString || typeof startString !== 'string' || !(set instanceof Set)) {
     return '';
   }
   // filter string start with bon
