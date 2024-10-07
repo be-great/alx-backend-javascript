@@ -5,7 +5,7 @@ export default function cleanSet(set, startString) {
   }
   // filter string start with bon
   const result = [...set]
-    .filter((str) => str.startsWith(startString))
+    .filter((str) => str.startsWith(startString) && typeof str ==='string')
     .map((str) => str.slice(startString.length))
     .join('-');
   return result;
