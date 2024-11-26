@@ -1,19 +1,39 @@
-const http = require('http');
-const countStudents = require('./3-read_file_async');
+const fs = require('fs');
 
-const app = http.createServer((request, response) => {
-  if (app.url === '/') {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.end('Hello Holberton School!');
-  } else if (request.url === '/students') {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.write('This is the list of our students\n');
-    countStudents(process.argv[2])
-      .then(() => response.end())
-      .catch((err) => {
-        response.end(err.message);
-      });
+const fetchStudentData = (filePath) => new Promise((resolve, reject) => {
+  if (!filePath) {
+    reject(new Error('Cannot load the database'));
+    return;
   }
+
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) {
+      reject(new Error('Cannot load the database'));
+      return;
+    }
+
+    const lines = data.trim().split('\n');
+    const groupByField = {};
+    const totalStudents = lines.slice(1).length;
+
+    lines.slice(1).forEach((line) => {
+      const studentInfo = line.split(',');
+      const field = studentInfo.pop();
+      if (!groupByField[field]) {
+        groupByField[field] = [];
+      }
+      groupByField[field].push(studentInfo[0]); // Assuming the first column is the name.
+    });
+
+    const report = [`Number of students: ${totalStudents}`];
+    for (const [field, students] of Object.entries(groupByField)) {
+      report.push(
+        `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`,
+      );
+    }
+
+    resolve(report.join('\n'));
+  });
 });
-app.listen(1245);
-module.exports = app;
+
+module.exports = fetchStudentData; // Export the function for use in other files
